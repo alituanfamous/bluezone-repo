@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="spin">
+        <div>
+            
+        </div>
+    </div>
+    </div>
+    <main>
+        <div class="report">
+            <h1>report</h1>
+            <div class="nav-btn">
+                <a href="" class="mass">sauna and massage</a>
+                <a href="" class="table">bar and restaurent</a>
+            </div>
+        </div>
+        <div class="report-btn">
+            <button class="daily">daily</button>
+            <button id="week">weekly</button>
+            <button>monthly</button>
+            <button>yearly</button>
+          <div class="printer">
+            <button onclick="window.print()" class="print" title="print report"><i class="fa fa-print"></i></button>
+          </div>
+        </div>
+        <div id="action">
+          
+            <div class="action" >
+                <div class="heading">
+                    <h3>
+                        are you sure to complete action
+                    </h3>
+                    <span id="close">close</span>
+                </div>
+                <hr>
+               <div class="link">
+                <a href=""><i class="fa-solid fa-trash"></i>remove</a>
+                
+                <a href=""><i class="fa fa-edit"></i>edit</a>
+               </div>
+               
+            </div>
+        </div>
+        <div class="text">
+            <p>
+                daily report for massage and sauna booking
+            </p>
+        </div>
+        <div class="table" id="table">
+            
+            <div class="daily-report" style="display: flex;">
+                <table border="1" id="table1">
+                    <tr>
+                        <th>#</th>
+                        <th>Full names</th>
+                        <th>phone</th>
+                        <th>service</th>
+                        <th>date</th>
+                        <th>option</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>altone famous</td>
+                        <td>0792514536</td>
+                        <td>sauna massage</td>
+                        <td>10/02/2025</td>
+                        <td>
+                            <i class="fa fa-chevron-down" id="down" title="option"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>umuragwa ndanga heritier</td>
+                        <td>0792514536</td>
+                        <td>sauna massage</td>
+                        <td>10/02/2025</td>
+                        <td>
+                            <i class="fa fa-chevron-down" id="up"></i>
+                        </td>
+                    </tr>
+                  
+                </table>
+            </div>
+            <div class="weekly-report" style="display: none;">
+                <table border="1" id="table2">
+                    <tr>
+                        <th>#</th>
+                        <th>Full names</th>
+                        <th>phone</th>
+                        <th>service</th>
+                        <th>date</th>
+                        <th>option</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>cyimana jules</td>
+                        <td>0784632879</td>
+                        <td>sauna massage</td>
+                        <td>01/12/2025</td>
+                        <td>
+                            <i class="fa fa-chevron-down" id="down" title="option"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>jimmy gatete</td>
+                        <td>07888888456</td>
+                        <td>sauna massage</td>
+                        <td>15/02/2025</td>
+                        <td>
+                            <i class="fa fa-chevron-down" id="down"></i>
+                        </td>
+                    </tr>
+                  
+                </table>
+            </div>
+            <div class="monthly-report" style="display: none;">
+                <p><i class="fa fa-warning" style="color: red;font-size: 30px;text-align: center;"></i> There is nothing available here</p>
+            </div>
+            <div class="yearly-report" style="display: none;">
+                <p><i class="fa fa-warning" style="color: red;font-size: 30px;text-align: center;"></i> There is nothing available here</p>
+            </div>
+        </div>
+    </main>
+    <script>
+        $(window).on('load', function() {
+            $(".spin").fadeOut(3000);
+            $("main").fadeIn(3000);
+        });
+    
+     
+        const innText = document.querySelector('.text');
+        const dailyButton = document.querySelector('.daily');
+        const weeklyButton = document.getElementById('week');
+        const monthlyButton = document.querySelector('button:nth-child(3)');
+        const yearlyButton = document.querySelector('button:nth-child(4)');
+        
+     
+        const dailyReport = document.querySelector('.daily-report');
+        const weeklyReport = document.querySelector('.weekly-report');
+        const monthlyReport = document.querySelector('.monthly-report');
+        const yearlyReport = document.querySelector('.yearly-report');
+    
+   
+        function hideAllReports() {
+          
+            dailyReport.style.display = 'none';
+            weeklyReport.style.display = 'none';
+            monthlyReport.style.display = 'none';
+            yearlyReport.style.display = 'none';
+        }
+    
+   
+        dailyButton.addEventListener('click', () => {
+            hideAllReports();
+            dailyReport.style.display = 'block';
+            innText.innerText=" daily report for massage and sauna booking";
+           
+        });
+    
+        weeklyButton.addEventListener('click', () => {
+            hideAllReports();
+            weeklyReport.style.display = 'block';
+            innText.innerText=" weekly report for massage and sauna booking";
+        });
+    
+        monthlyButton.addEventListener('click', () => {
+            hideAllReports();
+            monthlyReport.style.display = 'block';
+            innText.innerText=" monthly report for massage and sauna booking";
+        });
+    
+        yearlyButton.addEventListener('click', () => {
+            hideAllReports();
+            yearlyReport.style.display = 'block';
+            innText.innerText=" yearly report for massage and sauna booking";
+        });
+    
+  
+        let down = document.getElementById('down');
+        let up = document.getElementById('up');
+        let action = document.getElementById('action');
+        let close = document.getElementById('close');
+    
+        down.onclick = function() {
+            action.style.display = "block";
+        };
+        up.onclick = function() {
+            action.style.display = "block";
+        };
+    
+        close.onclick = function() {
+            action.style.display = "none";
+        };
+    </script>
+    
+</body>
+</html>
