@@ -201,11 +201,14 @@
         close.onclick = function() {
             action.style.display = "none";
         };
-       const btn = document.querySelectorAll(".btn");
-btn.onfocus = function(){
-    btn.style.backgroundColor="dodgerblue";
-    btn.style.color="white";
-};
+const btn = document.querySelectorAll(".btn");
+btn.forEach(button => {
+    button.onfocus = function() {
+        button.style.backgroundColor = "dodgerblue";
+        button.style.color = "white";
+    };
+});
+
 
     </script>
     
