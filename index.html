@@ -201,12 +201,24 @@
         close.onclick = function() {
             action.style.display = "none";
         };
-const btn = document.querySelectorAll(".btn");
-btn.forEach(button => {
-    button.onfocus = function() {
-        button.style.backgroundColor = "dodgerblue";
-        button.style.color = "white";
-    };
+      const buttons = document.querySelectorAll('.btn');
+const reports = document.querySelectorAll('.daily-report, .weekly-report, .monthly-report, .yearly-report');
+
+buttons.forEach((btn, index) => {
+  btn.addEventListener('click', function() {
+    buttons.forEach(button => {
+      button.style.backgroundColor = 'transparent';
+      button.style.color = 'gray';    
+    });
+
+    reports.forEach(report => {
+      report.style.display = 'none';
+    });
+
+    btn.style.backgroundColor = 'dodgerblue';
+    btn.style.color = 'white';
+    reports[index].style.display = 'block';
+  });
 });
 
 
