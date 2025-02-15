@@ -276,4 +276,7 @@ tr td #up{
         .table{
             overflow: auto;
         }
+       .report-btn h1{
+            font-size: small;
+        }
     }
