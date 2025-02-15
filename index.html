@@ -14,7 +14,7 @@
             
         </div>
     </div>
-    </div>
+    
     <main>
         <div class="report">
             <h1>report</h1>
@@ -133,8 +133,8 @@
     </main>
     <script>
         $(window).on('load', function() {
-            $(".spin").fadeOut(3000);
-            $("main").fadeIn(3000);
+            $(".spin").fadeOut();
+            $("main").fadeIn();
         });
     
      
@@ -201,11 +201,12 @@
         close.onclick = function() {
             action.style.display = "none";
         };
-          const btn= document.querySelectorAll(".btn");
-         btn.onfocus= function (){
-             btn.style.backgroundColor="dodgerblue";
-             btn.style.color="white";
-         })
+       const btn = document.querySelectorAll(".btn");
+btn.onfocus = function(){
+    btn.style.backgroundColor="dodgerblue";
+    btn.style.color="white";
+};
+
     </script>
     
 </body>
