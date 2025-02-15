@@ -262,3 +262,18 @@ tr td #up{
 #close{
     cursor: pointer;
 }
+   @media (max-width: 768px){
+        .action{
+        width: 90%;
+        height: max-content;
+        }
+        .report-btn{
+            width: 90%;
+        }
+        .report{
+            flex-direction: row;
+        }
+        .table{
+            overflow: auto;
+        }
+    }
